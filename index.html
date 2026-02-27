@@ -1,20 +1,399 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CV - Marcos Annibale</title>
-    <style>
-      body { font-family: Arial, sans-serif; margin: 40px; max-width: 900px; }
-      a { display: inline-block; margin: 10px 0; font-size: 18px; }
-      .box { padding: 18px; border: 1px solid #ddd; border-radius: 12px; }
-    </style>
-  </head>
-  <body>
-    <h1>Currículos</h1>
-    <div class="box">
-      <a href="./Marcos_Annibale_CV_PT.pdf" target="_blank">📄 Baixar CV (PT-BR)</a><br/>
-      <a href="./Marcos_Annibale_CV_EN.pdf" target="_blank">📄 Download CV (EN)</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Currículos (PT-BR e EN) - Marcos Annibale" />
+  <title>Currículos | Marcos Annibale</title>
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --accent: #7c5cff;
+      --accent2:#2ad7ff;
+      --btn: rgba(255,255,255,.10);
+      --btnHover: rgba(255,255,255,.16);
+      --focus: 0 0 0 3px rgba(124,92,255,.35);
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f5f7ff;
+        --card: rgba(0,0,0,.05);
+        --card2: rgba(0,0,0,.035);
+        --text: rgba(0,0,0,.85);
+        --muted: rgba(0,0,0,.60);
+        --border: rgba(0,0,0,.10);
+        --shadow: 0 14px 45px rgba(10,20,60,.12);
+        --btn: rgba(0,0,0,.05);
+        --btnHover: rgba(0,0,0,.08);
+        --focus: 0 0 0 3px rgba(124,92,255,.25);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 420px at 20% 0%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(850px 420px at 85% 10%, rgba(42,215,255,.28), transparent 55%),
+        radial-gradient(900px 480px at 50% 100%, rgba(124,92,255,.20), transparent 65%),
+        var(--bg);
+      padding: 32px 18px 48px;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .title{
+      margin:0;
+      font-size: clamp(28px, 3.3vw, 44px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .subtitle{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 58ch;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      user-select:none;
+      white-space:nowrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.2) 45%, transparent 70%),
+                  linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 3px rgba(255,255,255,.06);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 880px){
+      .grid{ grid-template-columns: 420px 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .cardPad{ padding: 18px; }
+
+    .sectionTitle{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hint{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .actions{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      width:100%;
+      text-decoration:none;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+
+    .btn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .btn:focus{ outline:none; box-shadow: var(--focus); }
+
+    .left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .icon{
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.28), rgba(42,215,255,.18));
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+    }
+
+    .label{
+      display:flex;
+      flex-direction:column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .label strong{
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .label span{
+      font-size: 12px;
+      color: var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .chip{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
+    .previewHead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .previewTitle{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .previewTitle strong{
+      font-size: 14px;
+      letter-spacing:-0.01em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .previewTitle span{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .smallBtn{
+      text-decoration:none;
+      font-size: 12px;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.03);
+      transition: background .12s ease, transform .12s ease;
+      flex: 0 0 auto;
+    }
+
+    .smallBtn:hover{
+      background: var(--btnHover);
+      transform: translateY(-1px);
+    }
+
+    .frame{
+      width:100%;
+      height: min(72vh, 820px);
+      border: 0;
+      display:block;
+      background: rgba(0,0,0,.08);
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+    }
+
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1 class="title">Currículos</h1>
+        <p class="subtitle">
+          Links diretos para baixar e visualizar meus CVs. Se quiser, você pode favoritar esta página.
+        </p>
+      </div>
+
+      <div class="pill" title="Hospedado em annibale.com.br">
+        <span class="dot"></span>
+        <span class="mono">annibale.com.br</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- COLUNA ESQUERDA -->
+      <section class="card">
+        <div class="cardPad">
+          <h2 class="sectionTitle">Downloads</h2>
+          <p class="hint">Escolha o idioma. Ao clicar, o PDF abre em outra aba e você pode baixar.</p>
+
+          <div class="actions">
+            <a class="btn" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+              <div class="left">
+                <div class="icon" aria-hidden="true">📄</div>
+                <div class="label">
+                  <strong>Baixar CV (PT-BR)</strong>
+                  <span>/Marcos_Annibale_CV_PT.pdf</span>
+                </div>
+              </div>
+              <span class="chip">Abrir</span>
+            </a>
+
+            <a class="btn" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
+              <div class="left">
+                <div class="icon" aria-hidden="true">🌍</div>
+                <div class="label">
+                  <strong>Download CV (EN)</strong>
+                  <span>/Marcos_Annibale_CV_EN.pdf</span>
+                </div>
+              </div>
+              <span class="chip">Open</span>
+            </a>
+          </div>
+
+          <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border);">
+            <p class="hint" style="margin:0;">
+              Dica: se quiser forçar “download direto” em alguns navegadores, clique com o botão direito e use
+              <strong>Salvar link como…</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUNA DIREITA (PREVIEW) -->
+      <section class="card">
+        <div class="previewHead">
+          <div class="previewTitle">
+            <strong>Pré-visualização</strong>
+            <span id="pvLabel">Mostrando: CV (PT-BR)</span>
+          </div>
+
+          <div style="display:flex; gap:8px; align-items:center;">
+            <a class="smallBtn" href="#" id="pvPT">Ver PT</a>
+            <a class="smallBtn" href="#" id="pvEN">Ver EN</a>
+            <a class="smallBtn" id="pvOpen" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">Abrir</a>
+          </div>
+        </div>
+
+        <iframe class="frame" id="pvFrame" src="/Marcos_Annibale_CV_PT.pdf">
+          Seu navegador não suporta preview de PDF.
+          Abra diretamente: /Marcos_Annibale_CV_PT.pdf
+        </iframe>
+      </section>
     </div>
-  </body>
+
+    <footer>
+      <span>© <span id="year"></span> Marcos Annibale</span>
+      <span class="mono">Última atualização: <span id="updated"></span></span>
+    </footer>
+  </div>
+
+  <script>
+    const PT = "/Marcos_Annibale_CV_PT.pdf";
+    const EN = "/Marcos_Annibale_CV_EN.pdf";
+
+    const frame = document.getElementById("pvFrame");
+    const label = document.getElementById("pvLabel");
+    const openBtn = document.getElementById("pvOpen");
+
+    function setPreview(url, text){
+      frame.src = url;
+      label.textContent = "Mostrando: " + text;
+      openBtn.href = url;
+    }
+
+    document.getElementById("pvPT").addEventListener("click", (e) => {
+      e.preventDefault();
+      setPreview(PT, "CV (PT-BR)");
+    });
+
+    document.getElementById("pvEN").addEventListener("click", (e) => {
+      e.preventDefault();
+      setPreview(EN, "CV (EN)");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("updated").textContent = new Date().toLocaleDateString("pt-BR");
+  </script>
+</body>
 </html>
