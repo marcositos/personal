@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Currículos de Marcos Annibale em PT-BR e EN. Baixe, visualize e conheça meu perfil profissional." />
+  <title>Marcos Annibale | Currículos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f7f4;
+      --bg-2: #f0eeea;
+      --surface: #ffffff;
+      --surface-2: #f4f2ef;
+      --border: #e4e1da;
+      --border-strong: #c9c5bc;
+      --text: #1a1916;
+      --muted: #6b6760;
+      --soft: #9a9590;
+      --accent: #3d5aff;
+      --accent-2: #7c3aed;
+      --accent-light: #eef0ff;
+      --accent-pill: #dde1ff;
+      --accent-pill-text: #2d40cc;
+      --green: #166534;
+      --green-bg: #dcfce7;
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --radius-pill: 999px;
+      --container: 1180px;
+      --shadow-xs: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.04);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248,247,244,.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--text);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -.02em;
+      flex: 0 0 auto;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 12.5px;
+      font-weight: 500;
+      border: 1px solid #bbf7d0;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex: 0 0 auto;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--text);
+      background: var(--surface);
+      border-color: var(--border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .hero-main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-pill);
+      color: var(--accent-pill-text);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .03em;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -.04em;
+      color: var(--text);
+      max-width: 14ch;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      margin-top: 20px;
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--radius-pill);
+      background: var(--text);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .15s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background: #111;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-2);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    /* ── HERO SIDE ── */
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--text);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      font-size: 17px;
+      color: white;
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+
+    .profile-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .profile-card p {
+      margin-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .skills-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skills-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--soft);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .stack-item {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 500;
+      transition: .12s ease;
+    }
+
+    .stack-item:hover {
+      border-color: var(--border-strong);
+      background: var(--surface);
+    }
+
+    .tip-card {
+      background: var(--accent-light);
+      border: 1px solid var(--accent-pill);
+      border-radius: var(--radius-xl);
+      padding: 18px 20px;
+    }
+
+    .tip-card p {
+      font-size: 13px;
+      color: var(--accent-pill-text);
+      line-height: 1.65;
+    }
+
+    .tip-card p strong {
+      font-weight: 600;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 16px 0 48px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+
+    .section-head p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 56ch;
+    }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR PANEL ── */
+    .sidebar-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-header {
+      padding: 22px 24px 0;
+    }
+
+    .panel-header h3 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .panel-header p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .download-list {
+      display: grid;
+      gap: 8px;
+      padding: 16px 24px 0;
+    }
+
+    .download-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: .15s ease;
+      cursor: pointer;
+    }
+
+    .download-card:hover {
+      background: var(--surface);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    .download-left {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .download-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      flex: 0 0 auto;
+    }
+
+    .download-label strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .download-label span {
+      display: block;
+      margin-top: 3px;
+      color: var(--soft);
+      font-size: 11.5px;
+      font-family: ui-monospace, Menlo, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      flex: 0 0 auto;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 18px 0 0;
+    }
+
+    .mini-note {
+      padding: 14px 24px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .quick-links {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 24px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: .12s ease;
+    }
+
+    .quick-link:last-child {
+      border-bottom: none;
+    }
+
+    .quick-link:hover {
+      background: var(--bg-2);
+      color: var(--accent);
+    }
+
+    .quick-link-arrow {
+      color: var(--soft);
+      font-size: 16px;
+      transition: transform .12s ease;
+    }
+
+    .quick-link:hover .quick-link-arrow {
+      transform: translateX(3px);
+      color: var(--accent);
+    }
+
+    /* ── PREVIEW PANEL ── */
+    .preview-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .preview-top-left strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .preview-top-left span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .preview-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .tiny-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: var(--radius-pill);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .13s ease;
+    }
+
+    .tiny-btn:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: var(--bg-2);
+    }
+
+    .tiny-btn.active {
+      color: var(--accent-pill-text);
+      background: var(--accent-pill);
+      border-color: #c7ceff;
+    }
+
+    .preview-body {
+      padding: 18px;
+      background: var(--bg-2);
+    }
+
+    .preview-shell {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-frame {
+      width: 100%;
+      height: min(72vh, 960px);
+      min-height: 680px;
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .strip-item {
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .strip-icon {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .strip-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+
+    .strip-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 0 48px;
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 16px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xs);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-box .mono {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp .55s ease forwards;
+    }
+
+    .delay-1 { animation-delay: .07s; }
+    .delay-2 { animation-delay: .14s; }
+    .delay-3 { animation-delay: .21s; }
+    .delay-4 { animation-delay: .28s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1080px) {
+      .hero-grid, .main-grid { grid-template-columns: 1fr; }
+      .hero-side { flex-direction: row; flex-wrap: wrap; }
+      .profile-card, .skills-card { flex: 1 1 260px; }
+      .tip-card { flex: 1 1 100%; }
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding: 36px 0 28px; }
+      .hero-main { padding: 28px 22px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .strip { grid-template-columns: 1fr 1fr; }
+      .preview-top { flex-direction: column; align-items: flex-start; }
+      .preview-frame { min-height: 480px; height: 58vh; }
+      .topbar-inner { height: auto; padding: 12px 0; flex-wrap: wrap; }
+      h1 { font-size: 34px; }
+    }
+
+    @media (max-width: 480px) {
+      .metrics, .strip { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .hero-side { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="brand" aria-label="Início">
+        <div class="brand-mark">MA</div>
+        <div class="brand-text">
+          <strong>Marcos Annibale</strong>
+          <span>annibale.com.br</span>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          Disponível
+        </div>
+        <a class="nav-btn" href="#curriculos">Currículos</a>
+        <a class="nav-btn" href="mailto:seuemail@exemplo.com">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <!-- Main hero card -->
+          <div class="hero-main fade-up">
+            <div class="eyebrow">
+              ✦ Perfil profissional · PT-BR / EN
+            </div>
+
+            <h1>Seu currículo,<br>apresentado com <em>clareza.</em></h1>
+
+            <p class="hero-desc">
+              Esta página reúne meus currículos em português e inglês — com
+              pré-visualização instantânea, download rápido e uma apresentação
+              limpa, profissional e sem complicação.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn-primary" href="#curriculos">Ver currículos ↓</a>
+              <a class="btn-ghost" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                Abrir CV em PT-BR
+              </a>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>2</strong>
+                <span>Versões disponíveis para visualização e download</span>
+              </div>
+              <div class="metric">
+                <strong>1 clique</strong>
+                <span>Para abrir ou baixar o PDF direto no navegador</span>
+              </div>
+              <div class="metric">
+                <strong>100%</strong>
+                <span>Compatível com GitHub Pages em arquivo único</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side cards -->
+          <div class="hero-side fade-up delay-1">
+            <div class="profile-card">
+              <div class="avatar">MA</div>
+              <h3>Marcos Annibale</h3>
+              <p>Espaço de apresentação profissional com acesso rápido ao currículo e visual que transmite credibilidade.</p>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-label">Stack &amp; áreas</div>
+              <div class="stack-list">
+                <span class="stack-item">Python</span>
+                <span class="stack-item">OSINT</span>
+                <span class="stack-item">IA</span>
+                <span class="stack-item">Análise</span>
+                <span class="stack-item">Automação</span>
+                <span class="stack-item">Produtos Web</span>
+              </div>
+            </div>
+
+            <div class="tip-card">
+              <p>
+                Dica: isso aqui pode evoluir para uma mini landing page com
+                <strong>projetos</strong>, <strong>GitHub</strong>, <strong>LinkedIn</strong>
+                e uma seção "sobre mim" — de página de PDF para cartão de visita premium.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULOS -->
+    <section id="curriculos" class="section">
+      <div class="wrap">
+        <div class="section-head fade-up delay-2">
+          <h2>Currículos</h2>
+          <p>Escolha o idioma, visualize direto na página e abra o PDF completo em nova aba.</p>
+        </div>
+
+        <div class="main-grid">
+          <!-- Sidebar -->
+          <aside class="sidebar-panel fade-up delay-2">
+            <div class="panel-header">
+              <h3>Downloads rápidos</h3>
+              <p>Clique para abrir o arquivo. Para salvar, use o botão do navegador ou clique com o botão direito.</p>
+            </div>
+
+            <div class="download-list">
+              <a class="download-card" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener" data-doc="pt">
+                <div class="download-left">
+                  <div class="download-icon">📄</div>
+                  <div class="download-label">
+                    <strong>Currículo · Português</strong>
+                    <span>Marcos_Annibale_CV_PT.pdf</span>
+                  </div>
+                </div>
+                <span class="badge">Abrir</span>
+              </a>
+
+              <a class="download-card" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener" data-doc="en">
+                <div class="download-left">
+                  <div class="download-icon">🌍</div>
+                  <div class="download-label">
+                    <strong>Resume · English</strong>
+                    <span>Marcos_Annibale_CV_EN.pdf</span>
+                  </div>
+                </div>
+                <span class="badge">Open</span>
+              </a>
+            </div>
+
+            <div class="mini-note">
+              <strong>Dica:</strong> em alguns navegadores o PDF abre no visualizador interno.
+              Para forçar o download, use <strong>Salvar link como…</strong> no menu de contexto.
+            </div>
+
+            <div class="quick-links">
+              <a class="quick-link" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                <span>Ver PT-BR em tela cheia</span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+              <a class="quick-link" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
+                <span>Ver EN em tela cheia</span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+              <a class="quick-link" href="mailto:seuemail@exemplo.com">
+                <span>Entrar em contato</span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Preview -->
+          <section class="preview-panel fade-up delay-3">
+            <div class="preview-top">
+              <div class="preview-top-left">
+                <strong>Pré-visualização</strong>
+                <span id="pvLabel">Mostrando agora: CV em PT-BR</span>
+              </div>
+
+              <div class="preview-actions">
+                <button class="tiny-btn active" id="btnPT" type="button">PT-BR</button>
+                <button class="tiny-btn" id="btnEN" type="button">EN</button>
+                <a class="tiny-btn" id="btnOpen" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                  ↗ Abrir PDF
+                </a>
+              </div>
+            </div>
+
+            <div class="preview-body">
+              <div class="preview-shell">
+                <iframe
+                  class="preview-frame"
+                  id="pvFrame"
+                  src="/Marcos_Annibale_CV_PT.pdf"
+                  title="Pré-visualização do currículo"
+                >
+                  Seu navegador não suporta pré-visualização de PDF.
+                </iframe>
+              </div>
+
+              <div class="strip">
+                <div class="strip-item">
+                  <div class="strip-icon">✦</div>
+                  <strong>Visual limpo</strong>
+                  <span>Sem poluição visual ou elementos desnecessários.</span>
+                </div>
+                <div class="strip-item">
+                  <div class="strip-icon">⇄</div>
+                  <strong>Troca rápida</strong>
+                  <span>Alterna entre PT-BR e EN sem recarregar a página.</span>
+                </div>
+                <div class="strip-item">
+                  <div class="strip-icon">◻</div>
+                  <strong>Mobile-ready</strong>
+                  <span>Responsivo para não quebrar em nenhuma tela.</span>
+                </div>
+                <div class="strip-item">
+                  <div class="strip-icon">⬆</div>
+                  <strong>GitHub Pages</strong>
+                  <span>Suba o HTML e os PDFs nos caminhos certos e pronto.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-box fade-up delay-4">
+        <span>© <span id="year"></span> Marcos Annibale</span>
+        <span class="mono">Atualizado em <span id="updated"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const DOCS = {
+      pt: { url: "/Marcos_Annibale_CV_PT.pdf", label: "CV em PT-BR" },
+      en: { url: "/Marcos_Annibale_CV_EN.pdf", label: "Resume em EN" }
+    };
+
+    const frame = document.getElementById("pvFrame");
+    const label = document.getElementById("pvLabel");
+    const openBtn = document.getElementById("btnOpen");
+    const btnPT = document.getElementById("btnPT");
+    const btnEN = document.getElementById("btnEN");
+
+    function setActive(lang) {
+      const doc = DOCS[lang];
+      frame.src = doc.url;
+      label.textContent = "Mostrando agora: " + doc.label;
+      openBtn.href = doc.url;
+      btnPT.classList.toggle("active", lang === "pt");
+      btnEN.classList.toggle("active", lang === "en");
+    }
+
+    btnPT.addEventListener("click", () => setActive("pt"));
+    btnEN.addEventListener("click", () => setActive("en"));
+
+    document.querySelectorAll("[data-doc]").forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        const lang = link.getAttribute("data-doc");
+        if (lang === "pt" || lang === "en") setActive(lang);
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("updated").textContent = new Date().toLocaleDateString("pt-BR");
+  </script>
+</body>
+</html>
