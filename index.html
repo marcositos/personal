@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcos Annibale — Executive Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --ink-light: #5a5650;
+    --ink-muted: #9a9590;
+    --gold: #b8986a;
+    --gold-light: #d4b88a;
+    --cream: #faf8f4;
+    --warm-white: #f5f3ee;
+    --border: #e8e4dc;
+    --card-bg: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    padding: 100px 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.1s;
+  }
+
+  .header-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.2s;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  .header-title {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-top: 20px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    max-width: 420px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.35s;
+  }
+
+  .header-meta {
+    text-align: right;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.4s;
+  }
+
+  .header-meta p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 2;
+  }
+
+  .header-meta strong {
+    color: var(--ink-light);
+    font-weight: 500;
+  }
+
+  /* ── DECORATIVE LINE ── */
+  .deco-line {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold-light), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── CV CARDS ── */
+  .cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 640px) {
+    .cv-grid { grid-template-columns: 1fr; }
+    header { grid-template-columns: 1fr; padding: 64px 24px 48px; }
+    .header-meta { text-align: left; }
+    main { padding: 48px 24px 80px; }
+    h1 { font-size: 52px; }
+  }
+
+  .cv-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 40px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+  }
+
+  .cv-card:nth-child(1) { animation-delay: 0.5s; }
+  .cv-card:nth-child(2) { animation-delay: 0.65s; }
+
+  .cv-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .cv-card:hover {
+    border-color: var(--gold-light);
+    transform: translateY(-4px);
+  }
+
+  .cv-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-flag {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .card-body { flex: 1; }
+
+  .card-lang {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .card-format {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .card-arrow {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 14px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .cv-card:hover .card-arrow {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    border-top: 1px solid var(--border);
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.8s;
+  }
+
+  @media (max-width: 640px) {
+    .about-strip { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .about-item-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .about-item-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .about-item-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 640px) {
+    footer { flex-direction: column; gap: 16px; padding: 32px 24px; }
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  footer a {
+    font-size: 12px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+  }
+
+  footer a:hover { color: var(--gold-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── CORNER ORNAMENT ── */
+  .ornament {
+    position: fixed;
+    top: 32px;
+    right: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.6s;
+  }
+
+  @media (max-width: 640px) { .ornament { display: none; } }
+</style>
+</head>
+<body>
+
+<span class="ornament">Executive Résumé</span>
+
+<header>
+  <div>
+    <p class="header-eyebrow">Professional Portfolio</p>
+    <h1>Marcos<br><em>Annibale</em></h1>
+    <p class="header-title">Senior executive with a track record of leading transformations in technology and operations. Available in English and Portuguese.</p>
+  </div>
+  <div class="header-meta">
+    <p><strong>Format</strong> · PDF</p>
+    <p><strong>Updated</strong> · 2025</p>
+    <p><strong>Versions</strong> · 2</p>
+  </div>
+  <div class="deco-line"></div>
+</header>
+
+<main>
+  <p class="section-label">Curriculum Vitae</p>
+
+  <div class="cv-grid">
+
+    <a class="cv-card" href="https://github.com/marcositos/personal/raw/main/Marcos_Annibale_CV_Executive_EN.pdf" target="_blank" rel="noopener">
+      <div class="card-flag">🇺🇸</div>
+      <div class="card-body">
+        <p class="card-lang">English</p>
+        <p class="card-desc">Executive résumé written in English — designed for international opportunities and global leadership roles.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-format">PDF · Download</span>
+        <span class="card-arrow">↓</span>
+      </div>
+    </a>
+
+    <a class="cv-card" href="https://github.com/marcositos/personal/raw/main/Marcos_Annibale_CV_Executive_PT.pdf" target="_blank" rel="noopener">
+      <div class="card-flag">🇧🇷</div>
+      <div class="card-body">
+        <p class="card-lang">Português</p>
+        <p class="card-desc">Currículo executivo em português — voltado para o mercado brasileiro e oportunidades na América Latina.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-format">PDF · Download</span>
+        <span class="card-arrow">↓</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="about-strip">
+    <div>
+      <p class="about-item-label">Specialization</p>
+      <p class="about-item-value">Technology &amp; Operations</p>
+      <p class="about-item-sub">Executive Leadership</p>
+    </div>
+    <div>
+      <p class="about-item-label">Region</p>
+      <p class="about-item-value">Brazil · Global</p>
+      <p class="about-item-sub">São Paulo, SP</p>
+    </div>
+    <div>
+      <p class="about-item-label">Contact</p>
+      <p class="about-item-value">Via LinkedIn</p>
+      <p class="about-item-sub">Open to opportunities</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Marcos Annibale · All rights reserved</p>
+  <a href="https://github.com/marcositos/personal" target="_blank" rel="noopener">github.com/marcositos/personal ↗</a>
+</footer>
+
+</body>
+</html>
