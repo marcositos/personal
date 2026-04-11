@@ -1,399 +1,1074 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Currículos (PT-BR e EN) - Marcos Annibale" />
-  <title>Currículos | Marcos Annibale</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta
+    name="description"
+    content="Currículos de Marcos Annibale em português e inglês. Engenharia de software, automação, IA, OSINT e projetos de alto impacto."
+  />
+  <title>Marcos Annibale | Currículos</title>
 
   <style>
     :root{
-      --bg: #0b1020;
-      --card: rgba(255,255,255,.08);
-      --card2: rgba(255,255,255,.06);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 18px 55px rgba(0,0,0,.35);
-      --accent: #7c5cff;
-      --accent2:#2ad7ff;
-      --btn: rgba(255,255,255,.10);
-      --btnHover: rgba(255,255,255,.16);
-      --focus: 0 0 0 3px rgba(124,92,255,.35);
+      --bg:#07111f;
+      --bg-2:#0d1b2d;
+      --panel:rgba(255,255,255,.06);
+      --panel-strong:rgba(255,255,255,.09);
+      --panel-soft:rgba(255,255,255,.04);
+      --text:#ecf3ff;
+      --muted:rgba(236,243,255,.72);
+      --line:rgba(255,255,255,.12);
+      --line-strong:rgba(255,255,255,.22);
+      --accent:#7c5cff;
+      --accent-2:#23d5ff;
+      --accent-3:#8df5c5;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --shadow-strong:0 30px 80px rgba(0,0,0,.48);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1280px;
     }
 
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #f5f7ff;
-        --card: rgba(0,0,0,.05);
-        --card2: rgba(0,0,0,.035);
-        --text: rgba(0,0,0,.85);
-        --muted: rgba(0,0,0,.60);
-        --border: rgba(0,0,0,.10);
-        --shadow: 0 14px 45px rgba(10,20,60,.12);
-        --btn: rgba(0,0,0,.05);
-        --btnHover: rgba(0,0,0,.08);
-        --focus: 0 0 0 3px rgba(124,92,255,.25);
-      }
-    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    html,body{ min-height:100%; }
 
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
+      color:var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(1000px 420px at 20% 0%, rgba(124,92,255,.35), transparent 60%),
-        radial-gradient(850px 420px at 85% 10%, rgba(42,215,255,.28), transparent 55%),
-        radial-gradient(900px 480px at 50% 100%, rgba(124,92,255,.20), transparent 65%),
-        var(--bg);
-      padding: 32px 18px 48px;
+        radial-gradient(1000px 700px at 10% -10%, rgba(124,92,255,.26), transparent 55%),
+        radial-gradient(900px 600px at 100% 0%, rgba(35,213,255,.18), transparent 52%),
+        radial-gradient(700px 500px at 50% 100%, rgba(141,245,197,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      overflow-x:hidden;
     }
 
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:32px 32px;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+      opacity:.18;
     }
 
-    header{
+    a{ color:inherit; }
+
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin:0 auto;
+    }
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid var(--line);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      padding:16px 0 0;
+    }
+
+    .topbar-inner{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:space-between;
-      gap: 16px;
-      margin-bottom: 18px;
+      gap:16px;
+      padding:12px 16px;
+      border-radius:999px;
     }
 
-    .title{
-      margin:0;
-      font-size: clamp(28px, 3.3vw, 44px);
-      letter-spacing: -0.02em;
-      line-height: 1.05;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
     }
 
-    .subtitle{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 58ch;
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,.15) 28%, transparent 29%),
+        linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 10px 30px rgba(124,92,255,.35);
+      font-weight:800;
+      color:white;
     }
 
-    .pill{
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+
+    .brand-text strong{
+      font-size:14px;
+      letter-spacing:.02em;
+    }
+
+    .brand-text span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav a{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);
+      font-size:14px;
+      transition:.2s ease;
+    }
+
+    .nav a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.05);
+    }
+
+    .hero{
+      padding:44px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .section-card,
+    .preview-card,
+    .download-card{
+      border-radius:var(--radius);
+    }
+
+    .hero-main{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-main::before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -100px auto;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(35,213,255,.22), transparent 65%);
+      z-index:-1;
+    }
+
+    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, var(--card), var(--card2));
-      border-radius: 999px;
-      box-shadow: var(--shadow);
-      user-select:none;
-      white-space:nowrap;
-      font-size: 13px;
-      color: var(--muted);
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:18px;
     }
 
-    .dot{
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.2) 45%, transparent 70%),
-                  linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 3px rgba(255,255,255,.06);
+    .eyebrow-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 0 0 4px rgba(124,92,255,.18);
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 18px;
+    h1{
+      margin:0;
+      font-size:clamp(40px, 7vw, 78px);
+      line-height:.94;
+      letter-spacing:-.05em;
+      max-width:10ch;
     }
 
-    @media (min-width: 880px){
-      .grid{ grid-template-columns: 420px 1fr; }
+    .gradient{
+      background:linear-gradient(90deg, #ffffff 0%, #b6cbff 40%, #7c5cff 75%, #23d5ff 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
-    .card{
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, var(--card), var(--card2));
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    .hero-copy{
+      margin:20px 0 0;
+      max-width:60ch;
+      font-size:17px;
+      line-height:1.7;
+      color:var(--muted);
     }
 
-    .cardPad{ padding: 18px; }
-
-    .sectionTitle{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-    }
-
-    .hint{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .actions{
-      display:grid;
-      gap: 10px;
-      margin-top: 10px;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
     }
 
     .btn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      width:100%;
+      appearance:none;
+      border:none;
+      cursor:pointer;
       text-decoration:none;
-      padding: 14px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.02);
-      color: var(--text);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 18px;
+      border-radius:16px;
+      font-weight:700;
+      font-size:15px;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     }
 
     .btn:hover{
-      background: var(--btnHover);
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,.22);
+      transform:translateY(-2px);
     }
 
-    .btn:focus{ outline:none; box-shadow: var(--focus); }
-
-    .left{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 0;
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 18px 40px rgba(95,108,255,.32);
     }
 
-    .icon{
-      width: 40px; height: 40px;
-      border-radius: 12px;
+    .btn-primary:hover{
+      box-shadow:0 24px 50px rgba(95,108,255,.42);
+    }
+
+    .btn-secondary{
+      color:var(--text);
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.08);
+      border-color:var(--line-strong);
+    }
+
+    .hero-stats{
       display:grid;
-      place-items:center;
-      background: linear-gradient(135deg, rgba(124,92,255,.28), rgba(42,215,255,.18));
-      border: 1px solid var(--border);
-      flex: 0 0 auto;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:26px;
     }
 
-    .label{
+    .stat{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:24px;
+      letter-spacing:-.04em;
+      margin-bottom:6px;
+    }
+
+    .stat span{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .hero-side{
+      padding:22px;
       display:flex;
       flex-direction:column;
-      gap: 3px;
-      min-width: 0;
-    }
-
-    .label strong{
-      font-size: 14px;
-      letter-spacing: -0.01em;
-      white-space:nowrap;
+      gap:14px;
+      position:relative;
       overflow:hidden;
-      text-overflow:ellipsis;
     }
 
-    .label span{
-      font-size: 12px;
-      color: var(--muted);
+    .profile-badge{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:14px;
+      border-radius:20px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+
+    .avatar{
+      width:62px;
+      height:62px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:24px;
+      font-weight:800;
+      background:linear-gradient(135deg, rgba(124,92,255,.45), rgba(35,213,255,.28));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 12px 30px rgba(0,0,0,.2);
+      flex:0 0 auto;
+    }
+
+    .profile-badge strong{
+      display:block;
+      font-size:18px;
+      letter-spacing:-.02em;
+    }
+
+    .profile-badge span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .tag{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:13px;
       white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
     }
 
-    .chip{
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      padding: 6px 10px;
-      border-radius: 999px;
-      flex: 0 0 auto;
+    .quote{
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(124,92,255,.12), rgba(35,213,255,.06));
     }
 
-    .previewHead{
+    .quote p{
+      margin:0;
+      font-size:15px;
+      line-height:1.65;
+      color:#dbe7ff;
+    }
+
+    .section{
+      padding:18px 0 0;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.03em;
+    }
+
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+      max-width:58ch;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .cards-grid{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .download-card{
+      padding:20px;
+    }
+
+    .download-list{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .download-item{
+      text-decoration:none;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 10px;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
+      gap:14px;
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.2s ease;
     }
 
-    .previewTitle{
+    .download-item:hover{
+      transform:translateY(-3px);
+      background:rgba(255,255,255,.07);
+      border-color:var(--line-strong);
+      box-shadow:0 16px 35px rgba(0,0,0,.2);
+    }
+
+    .download-item .left{
       display:flex;
-      flex-direction:column;
-      gap: 2px;
-      min-width: 0;
+      align-items:center;
+      gap:14px;
+      min-width:0;
     }
 
-    .previewTitle strong{
-      font-size: 14px;
-      letter-spacing:-0.01em;
+    .download-icon{
+      width:48px;
+      height:48px;
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(124,92,255,.26), rgba(35,213,255,.14));
+      font-size:20px;
+    }
+
+    .download-item strong{
+      display:block;
+      font-size:15px;
+      letter-spacing:-.01em;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
     }
 
-    .previewTitle span{
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .smallBtn{
-      text-decoration:none;
-      font-size: 12px;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 8px 10px;
-      border-radius: 10px;
-      background: rgba(255,255,255,.03);
-      transition: background .12s ease, transform .12s ease;
-      flex: 0 0 auto;
-    }
-
-    .smallBtn:hover{
-      background: var(--btnHover);
-      transform: translateY(-1px);
-    }
-
-    .frame{
-      width:100%;
-      height: min(72vh, 820px);
-      border: 0;
+    .download-item span{
       display:block;
-      background: rgba(0,0,0,.08);
+      color:var(--muted);
+      font-size:12px;
+      margin-top:4px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--text);
+      font-size:12px;
+      background:rgba(255,255,255,.04);
+      flex:0 0 auto;
+    }
+
+    .download-tip{
+      margin-top:16px;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .preview-card{
+      overflow:hidden;
+    }
+
+    .preview-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:18px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .preview-head strong{
+      display:block;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .preview-head span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .preview-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .mini-btn{
+      text-decoration:none;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-size:13px;
+      color:var(--text);
+      transition:.18s ease;
+    }
+
+    .mini-btn:hover,
+    .mini-btn.active{
+      background:rgba(255,255,255,.1);
+      border-color:var(--line-strong);
+      transform:translateY(-1px);
+    }
+
+    .preview-wrap{
+      padding:18px;
+    }
+
+    .preview-shell{
+      border-radius:24px;
+      padding:14px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .browser-bar{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:0 4px 12px;
+    }
+
+    .browser-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(255,255,255,.25);
+    }
+
+    .preview-frame{
+      width:100%;
+      height:min(76vh, 980px);
+      border:0;
+      display:block;
+      border-radius:18px;
+      background:#111;
+      box-shadow:var(--shadow-strong);
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .section-card{
+      padding:20px;
+    }
+
+    .feature-number{
+      display:inline-flex;
+      width:36px;
+      height:36px;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(124,92,255,.25), rgba(35,213,255,.18));
+      border:1px solid var(--line);
+      margin-bottom:14px;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .section-card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.02em;
+    }
+
+    .section-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .cta{
+      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin:26px 0 34px;
+      border-radius:28px;
+    }
+
+    .cta h3{
+      margin:0 0 8px;
+      font-size:26px;
+      letter-spacing:-.03em;
+    }
+
+    .cta p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      max-width:62ch;
     }
 
     footer{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 12px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items:center;
-      justify-content: space-between;
+      padding:0 0 34px;
+      color:var(--muted);
+      font-size:13px;
     }
 
-    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .mono{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(18px);
+      animation:fadeUp .7s ease forwards;
+    }
+
+    .fade-delay-1{ animation-delay:.08s; }
+    .fade-delay-2{ animation-delay:.16s; }
+    .fade-delay-3{ animation-delay:.24s; }
+
+    @keyframes fadeUp{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .cards-grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        max-width:unset;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(calc(100% - 18px), var(--max));
+      }
+
+      .topbar{
+        padding-top:10px;
+      }
+
+      .topbar-inner{
+        border-radius:22px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero{
+        padding-top:26px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .download-card,
+      .preview-card,
+      .section-card,
+      .cta{
+        border-radius:22px;
+      }
+
+      .hero-main{
+        padding:22px;
+      }
+
+      .hero-side{
+        padding:18px;
+      }
+
+      .hero-copy{
+        font-size:16px;
+      }
+
+      .hero-stats,
+      .feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .preview-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .preview-actions{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .preview-frame{
+        height:72vh;
+      }
+
+      .cta{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1 class="title">Currículos</h1>
-        <p class="subtitle">
-          Links diretos para baixar e visualizar meus CVs. Se quiser, você pode favoritar esta página.
-        </p>
-      </div>
-
-      <div class="pill" title="Hospedado em annibale.com.br">
-        <span class="dot"></span>
-        <span class="mono">annibale.com.br</span>
-      </div>
-    </header>
-
-    <div class="grid">
-      <!-- COLUNA ESQUERDA -->
-      <section class="card">
-        <div class="cardPad">
-          <h2 class="sectionTitle">Downloads</h2>
-          <p class="hint">Escolha o idioma. Ao clicar, o PDF abre em outra aba e você pode baixar.</p>
-
-          <div class="actions">
-            <a class="btn" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
-              <div class="left">
-                <div class="icon" aria-hidden="true">📄</div>
-                <div class="label">
-                  <strong>Baixar CV (PT-BR)</strong>
-                  <span>/Marcos_Annibale_CV_PT.pdf</span>
-                </div>
-              </div>
-              <span class="chip">Abrir</span>
-            </a>
-
-            <a class="btn" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
-              <div class="left">
-                <div class="icon" aria-hidden="true">🌍</div>
-                <div class="label">
-                  <strong>Download CV (EN)</strong>
-                  <span>/Marcos_Annibale_CV_EN.pdf</span>
-                </div>
-              </div>
-              <span class="chip">Open</span>
-            </a>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner glass fade-up">
+        <div class="brand">
+          <div class="brand-mark">MA</div>
+          <div class="brand-text">
+            <strong>Marcos Annibale</strong>
+            <span>Currículos · Portfólio rápido · Presença digital</span>
           </div>
+        </div>
 
-          <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border);">
-            <p class="hint" style="margin:0;">
-              Dica: se quiser forçar “download direto” em alguns navegadores, clique com o botão direito e use
-              <strong>Salvar link como…</strong>
+        <nav class="nav">
+          <a href="#curriculos">Currículos</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <section class="hero-main glass fade-up fade-delay-1">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Engenharia, automação, IA e execução sem enrolação
+            </div>
+
+            <h1>
+              Seu próximo
+              <span class="gradient">dev sênior</span>
+              pode estar aqui.
+            </h1>
+
+            <p class="hero-copy">
+              Construo soluções que saem do papel e entram em produção. Do backend bruto ao produto final:
+              automação, análise de dados, IA aplicada, OSINT, performance e sistemas que trabalham de verdade.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#curriculos">Ver currículos</a>
+              <a class="btn btn-secondary" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                Abrir CV PT-BR
+              </a>
+              <a class="btn btn-secondary" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
+                Open CV EN
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>Backend</strong>
+                <span>Python, automação, APIs, pipelines e integrações de verdade.</span>
+              </div>
+              <div class="stat">
+                <strong>IA + OSINT</strong>
+                <span>Dados, correlação, análise e ferramentas úteis, não enfeite.</span>
+              </div>
+              <div class="stat">
+                <strong>Entrega</strong>
+                <span>Menos powerpoint, mais código funcionando e valor real.</span>
+              </div>
+            </div>
+          </section>
+
+          <aside class="hero-side glass fade-up fade-delay-2">
+            <div class="profile-badge">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Marcos Annibale</strong>
+                <span>
+                  Foco em software prático, automação inteligente e soluções com impacto.
+                </span>
+              </div>
+            </div>
+
+            <div class="stack">
+              <span class="tag">Python</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Automação</span>
+              <span class="tag">IA</span>
+              <span class="tag">OSINT</span>
+              <span class="tag">Análise de dados</span>
+              <span class="tag">Produtos web</span>
+              <span class="tag">Integrações</span>
+            </div>
+
+            <div class="quote">
+              <p>
+                Código bom é o que resolve, escala e não pede desculpa. O resto é decoração.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="curriculos">
+      <div class="container">
+        <div class="section-title fade-up">
+          <div>
+            <h2>Currículos</h2>
+            <p>
+              Escolha o idioma, visualize direto no site ou abra o PDF completo em uma nova aba.
             </p>
           </div>
         </div>
-      </section>
 
-      <!-- COLUNA DIREITA (PREVIEW) -->
-      <section class="card">
-        <div class="previewHead">
-          <div class="previewTitle">
-            <strong>Pré-visualização</strong>
-            <span id="pvLabel">Mostrando: CV (PT-BR)</span>
-          </div>
+        <div class="cards-grid">
+          <section class="download-card glass fade-up fade-delay-1">
+            <h3 style="margin:0;font-size:22px;letter-spacing:-.03em;">Downloads rápidos</h3>
+            <p style="margin:10px 0 0;color:var(--muted);line-height:1.65;font-size:14px;">
+              Acesso direto aos meus CVs. Sem firula, sem caça ao link.
+            </p>
 
-          <div style="display:flex; gap:8px; align-items:center;">
-            <a class="smallBtn" href="#" id="pvPT">Ver PT</a>
-            <a class="smallBtn" href="#" id="pvEN">Ver EN</a>
-            <a class="smallBtn" id="pvOpen" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">Abrir</a>
+            <div class="download-list">
+              <a class="download-item" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                <div class="left">
+                  <div class="download-icon">🇧🇷</div>
+                  <div>
+                    <strong>Currículo em Português</strong>
+                    <span>/Marcos_Annibale_CV_PT.pdf</span>
+                  </div>
+                </div>
+                <span class="pill">Abrir</span>
+              </a>
+
+              <a class="download-item" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
+                <div class="left">
+                  <div class="download-icon">🌍</div>
+                  <div>
+                    <strong>Resume in English</strong>
+                    <span>/Marcos_Annibale_CV_EN.pdf</span>
+                  </div>
+                </div>
+                <span class="pill">Open</span>
+              </a>
+            </div>
+
+            <div class="download-tip">
+              Dica ninja: se o navegador insistir em abrir o PDF em vez de baixar, use
+              <strong>botão direito → Salvar link como…</strong>.
+            </div>
+          </section>
+
+          <section class="preview-card glass fade-up fade-delay-2">
+            <div class="preview-head">
+              <div>
+                <strong>Pré-visualização</strong>
+                <span id="previewLabel">Mostrando agora: CV em Português</span>
+              </div>
+
+              <div class="preview-actions">
+                <button class="mini-btn active" id="btnPT" type="button">Ver PT-BR</button>
+                <button class="mini-btn" id="btnEN" type="button">View EN</button>
+                <a class="mini-btn" id="btnOpen" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                  Abrir PDF
+                </a>
+              </div>
+            </div>
+
+            <div class="preview-wrap">
+              <div class="preview-shell">
+                <div class="browser-bar">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+
+                <iframe
+                  class="preview-frame"
+                  id="previewFrame"
+                  src="/Marcos_Annibale_CV_PT.pdf"
+                  title="Pré-visualização do currículo"
+                >
+                  Seu navegador não suporta preview de PDF.
+                </iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destaques">
+      <div class="container">
+        <div class="section-title fade-up">
+          <div>
+            <h2>Destaques</h2>
+            <p>
+              O que esta página quer comunicar sem precisar gritar: competência, clareza e execução.
+            </p>
           </div>
         </div>
 
-        <iframe class="frame" id="pvFrame" src="/Marcos_Annibale_CV_PT.pdf">
-          Seu navegador não suporta preview de PDF.
-          Abra diretamente: /Marcos_Annibale_CV_PT.pdf
-        </iframe>
-      </section>
-    </div>
+        <div class="feature-grid">
+          <article class="section-card glass fade-up fade-delay-1">
+            <span class="feature-number">01</span>
+            <h3>Visual premium</h3>
+            <p>
+              Cara de produto sério, não de página improvisada. Mais presença, mais confiança, mais peso.
+            </p>
+          </article>
 
-    <footer>
-      <span>© <span id="year"></span> Marcos Annibale</span>
-      <span class="mono">Última atualização: <span id="updated"></span></span>
-    </footer>
-  </div>
+          <article class="section-card glass fade-up fade-delay-2">
+            <span class="feature-number">02</span>
+            <h3>Navegação rápida</h3>
+            <p>
+              O recrutador não precisa pensar. Ele vê, clica, abre e entende em segundos.
+            </p>
+          </article>
+
+          <article class="section-card glass fade-up fade-delay-3">
+            <span class="feature-number">03</span>
+            <h3>Posicionamento forte</h3>
+            <p>
+              Em vez de só hospedar PDFs, a página passa a vender sua imagem profissional.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta glass fade-up" id="contato">
+          <div>
+            <h3>Quer contato rápido?</h3>
+            <p>
+              Troque o botão abaixo pelo seu LinkedIn, GitHub, e-mail ou WhatsApp. A estrutura já está pronta.
+            </p>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:seuemail@exemplo.com">Falar comigo</a>
+            <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-secondary" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Marcos Annibale</span>
+        <span class="mono">Atualizado em <span id="updated"></span></span>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const PT = "/Marcos_Annibale_CV_PT.pdf";
-    const EN = "/Marcos_Annibale_CV_EN.pdf";
+    const CV_PT = "/Marcos_Annibale_CV_PT.pdf";
+    const CV_EN = "/Marcos_Annibale_CV_EN.pdf";
 
-    const frame = document.getElementById("pvFrame");
-    const label = document.getElementById("pvLabel");
-    const openBtn = document.getElementById("pvOpen");
+    const previewFrame = document.getElementById("previewFrame");
+    const previewLabel = document.getElementById("previewLabel");
+    const btnPT = document.getElementById("btnPT");
+    const btnEN = document.getElementById("btnEN");
+    const btnOpen = document.getElementById("btnOpen");
 
-    function setPreview(url, text){
-      frame.src = url;
-      label.textContent = "Mostrando: " + text;
-      openBtn.href = url;
+    function setActiveButton(activeButton) {
+      [btnPT, btnEN].forEach(btn => btn.classList.remove("active"));
+      activeButton.classList.add("active");
     }
 
-    document.getElementById("pvPT").addEventListener("click", (e) => {
-      e.preventDefault();
-      setPreview(PT, "CV (PT-BR)");
-    });
+    function setPreview(lang) {
+      if (lang === "pt") {
+        previewFrame.src = CV_PT;
+        previewLabel.textContent = "Mostrando agora: CV em Português";
+        btnOpen.href = CV_PT;
+        btnOpen.textContent = "Abrir PDF";
+        setActiveButton(btnPT);
+      } else {
+        previewFrame.src = CV_EN;
+        previewLabel.textContent = "Showing now: Resume in English";
+        btnOpen.href = CV_EN;
+        btnOpen.textContent = "Open PDF";
+        setActiveButton(btnEN);
+      }
+    }
 
-    document.getElementById("pvEN").addEventListener("click", (e) => {
-      e.preventDefault();
-      setPreview(EN, "CV (EN)");
-    });
+    btnPT.addEventListener("click", () => setPreview("pt"));
+    btnEN.addEventListener("click", () => setPreview("en"));
 
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("updated").textContent = new Date().toLocaleDateString("pt-BR");
+
+    const now = new Date();
+    document.getElementById("updated").textContent = now.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
   </script>
 </body>
 </html>
