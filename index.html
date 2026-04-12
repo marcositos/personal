@@ -1,0 +1,1114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Marcos Annibale — Líder de Operações e Suporte ao Cliente. Currículos em PT-BR e EN." />
+  <title>Marcos Annibale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f3ef;
+      --bg-2: #eceae4;
+      --surface: #ffffff;
+      --surface-2: #f4f2ef;
+      --border: #e2dfd7;
+      --border-strong: #c5c1b8;
+      --text: #181714;
+      --muted: #6b6760;
+      --soft: #9a9590;
+      --accent: #1a3fff;
+      --accent-2: #6d28d9;
+      --accent-light: #eef0ff;
+      --accent-pill: #dde1ff;
+      --accent-pill-text: #2433b8;
+      --green: #14532d;
+      --green-bg: #dcfce7;
+      --radius-xl: 22px;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 7px;
+      --radius-pill: 999px;
+      --container: 1160px;
+      --shadow-xs: 0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 18px rgba(0,0,0,.09), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.11), 0 2px 8px rgba(0,0,0,.04);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand-text strong, .section-head h2 {
+      font-family: 'Syne', sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245,243,239,.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--text);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: -.01em;
+      flex: 0 0 auto;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 12.5px;
+      font-weight: 500;
+      border: 1px solid #bbf7d0;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex: 0 0 auto;
+      animation: pulse 2.2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .45; }
+    }
+
+    /* ── LANG SWITCHER ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: .15s ease;
+      line-height: 1;
+    }
+
+    .lang-btn .flag {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .lang-btn.active {
+      color: var(--text);
+      background: var(--bg-2);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--text);
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--text);
+      background: var(--surface);
+      border-color: var(--border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 60px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .hero-main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-pill);
+      color: var(--accent-pill-text);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 4.2vw, 54px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      color: var(--text);
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(100deg, var(--accent) 20%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      margin-top: 20px;
+      max-width: 56ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--radius-pill);
+      background: var(--text);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .15s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background: #111;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-2);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO SIDE ── */
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .avatar-wrap {
+      margin-bottom: 14px;
+    }
+
+    .avatar-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      object-fit: cover;
+      display: block;
+      border: 2px solid var(--border);
+    }
+
+    .profile-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .profile-card .role-tag {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-pill);
+      color: var(--accent-pill-text);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+
+    .profile-card p {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .skills-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skills-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--soft);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .stack-item {
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 500;
+      transition: .12s ease;
+      line-height: 1.4;
+    }
+
+    .stack-item:hover {
+      border-color: var(--border-strong);
+      background: var(--surface);
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 12px 0 52px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .section-head p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 56ch;
+    }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR PANEL ── */
+    .sidebar-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-header {
+      padding: 22px 24px 0;
+    }
+
+    .panel-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .panel-header p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .download-list {
+      display: grid;
+      gap: 8px;
+      padding: 16px 24px 0;
+    }
+
+    .download-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: .15s ease;
+      cursor: pointer;
+    }
+
+    .download-card:hover {
+      background: var(--surface);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    .download-left {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .download-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      flex: 0 0 auto;
+    }
+
+    .download-label strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .download-label span {
+      display: block;
+      margin-top: 3px;
+      color: var(--soft);
+      font-size: 11.5px;
+      font-family: ui-monospace, Menlo, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      flex: 0 0 auto;
+    }
+
+    .mini-note {
+      padding: 14px 24px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .quick-links {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 24px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: .12s ease;
+    }
+
+    .quick-link:last-child {
+      border-bottom: none;
+    }
+
+    .quick-link:hover {
+      background: var(--bg-2);
+      color: var(--accent);
+    }
+
+    .quick-link-arrow {
+      color: var(--soft);
+      font-size: 16px;
+      transition: transform .12s ease;
+    }
+
+    .quick-link:hover .quick-link-arrow {
+      transform: translateX(3px);
+      color: var(--accent);
+    }
+
+    /* ── PREVIEW PANEL ── */
+    .preview-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .preview-top-left strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .preview-top-left span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .preview-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .tiny-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: var(--radius-pill);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .13s ease;
+    }
+
+    .tiny-btn:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: var(--bg-2);
+    }
+
+    .tiny-btn.active {
+      color: var(--accent-pill-text);
+      background: var(--accent-pill);
+      border-color: #c7ceff;
+    }
+
+    .preview-body {
+      padding: 18px;
+      background: var(--bg-2);
+    }
+
+    .preview-shell {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-frame {
+      width: 100%;
+      height: min(72vh, 960px);
+      min-height: 680px;
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 0 48px;
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 16px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xs);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-box .mono {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .55s ease forwards;
+    }
+
+    .delay-1 { animation-delay: .07s; }
+    .delay-2 { animation-delay: .14s; }
+    .delay-3 { animation-delay: .21s; }
+    .delay-4 { animation-delay: .28s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hidden by lang */
+    [data-lang] { transition: opacity .2s ease; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1080px) {
+      .hero-grid, .main-grid { grid-template-columns: 1fr; }
+      .hero-side { flex-direction: row; flex-wrap: wrap; }
+      .profile-card, .skills-card { flex: 1 1 260px; }
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding: 36px 0 28px; }
+      .hero-main { padding: 28px 22px; }
+      .preview-top { flex-direction: column; align-items: flex-start; }
+      .preview-frame { min-height: 480px; height: 58vh; }
+      .topbar-inner { height: auto; padding: 12px 0; flex-wrap: wrap; }
+      h1 { font-size: 34px; }
+      .status-pill { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta { flex-direction: column; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .hero-side { flex-direction: column; }
+      .lang-btn span.lang-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="brand" aria-label="Home">
+        <div class="brand-mark">MA</div>
+        <div class="brand-text">
+          <strong>Marcos Annibale</strong>
+          <span>annibale.com.br</span>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span data-lang="pt">Disponível</span>
+          <span data-lang="en" style="display:none">Available</span>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="lang-switcher" role="group" aria-label="Language switcher">
+          <button class="lang-btn active" id="btnLangPT" type="button" aria-pressed="true">
+            <span class="flag">🇧🇷</span>
+            <span class="lang-label">PT-BR</span>
+          </button>
+          <button class="lang-btn" id="btnLangEN" type="button" aria-pressed="false">
+            <span class="flag">🇺🇸</span>
+            <span class="lang-label">EN</span>
+          </button>
+        </div>
+
+        <a class="nav-btn" href="#curriculos">
+          <span data-lang="pt">Currículos</span>
+          <span data-lang="en" style="display:none">Résumés</span>
+        </a>
+        <a class="nav-btn" href="mailto:seuemail@exemplo.com">
+          <span data-lang="pt">Contato</span>
+          <span data-lang="en" style="display:none">Contact</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <!-- Main hero card -->
+          <div class="hero-main fade-up">
+            <div class="eyebrow">
+              <span data-lang="pt">✦ Perfil profissional · PT-BR / EN</span>
+              <span data-lang="en" style="display:none">✦ Professional profile · EN / PT-BR</span>
+            </div>
+
+            <h1>
+              <span data-lang="pt">Marcos<br><em>Annibale</em></span>
+              <span data-lang="en" style="display:none">Marcos<br><em>Annibale</em></span>
+            </h1>
+
+            <p class="hero-desc">
+              <span data-lang="pt">Líder de Operações e Suporte ao Cliente com mais de 10 anos de experiência em empresas globais de tecnologia e Web3. Especialista em estruturar operações do zero, escalar equipes remotas de alta performance e resolver problemas complexos em ambientes críticos.</span>
+              <span data-lang="en" style="display:none">Customer Support and Operations Leader with 10+ years of experience at global technology and Web3 companies. Expert in building operations from the ground up, scaling high-performance remote teams, and solving complex problems in critical environments.</span>
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn-primary" href="#curriculos">
+                <span data-lang="pt">Ver currículos ↓</span>
+                <span data-lang="en" style="display:none">View résumés ↓</span>
+              </a>
+              <a class="btn-ghost" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                <span data-lang="pt">Abrir CV em PT-BR</span>
+                <span data-lang="en" style="display:none">Open CV in PT-BR</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Side cards -->
+          <div class="hero-side fade-up delay-1">
+            <div class="profile-card">
+              <div class="avatar-wrap">
+                <img
+                  class="avatar-img"
+                  src="https://avatars.githubusercontent.com/u/121165949?v=4"
+                  alt="Marcos Annibale"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Marcos Annibale</h3>
+              <span class="role-tag">
+                <span data-lang="pt">Operações &amp; Suporte ao Cliente</span>
+                <span data-lang="en" style="display:none">Operations &amp; Customer Support</span>
+              </span>
+              <p>
+                <span data-lang="pt">Líder de Operações e Suporte ao Cliente com mais de 10 anos de experiência em empresas globais de tecnologia e Web3. Especialista em estruturar operações do zero, escalar equipes remotas de alta performance e resolver problemas complexos em ambientes críticos.</span>
+                <span data-lang="en" style="display:none">Customer Support and Operations Leader with 10+ years of experience at global technology and Web3 companies. Expert in building operations from scratch, scaling high-performance remote teams, and solving complex problems in critical environments.</span>
+              </p>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-label">
+                <span data-lang="pt">Stack &amp; Áreas</span>
+                <span data-lang="en" style="display:none">Stack &amp; Areas</span>
+              </div>
+              <div class="stack-list">
+                <span class="stack-item">
+                  <span data-lang="pt">Automação e Análise (Python, SQL)</span>
+                  <span data-lang="en" style="display:none">Automation &amp; Analysis (Python, SQL)</span>
+                </span>
+                <span class="stack-item">
+                  <span data-lang="pt">OSINT &amp; Forense em ambientes Web3</span>
+                  <span data-lang="en" style="display:none">OSINT &amp; Forensics in Web3 environments</span>
+                </span>
+                <span class="stack-item">
+                  <span data-lang="pt">IA aplicada à eficiência operacional</span>
+                  <span data-lang="en" style="display:none">AI applied to operational efficiency</span>
+                </span>
+                <span class="stack-item">
+                  <span data-lang="pt">Arquitetura de sistemas de suporte e produtos web</span>
+                  <span data-lang="en" style="display:none">Support systems architecture &amp; web products</span>
+                </span>
+                <span class="stack-item">
+                  <span data-lang="pt">Estratégia e otimização de operações em escala</span>
+                  <span data-lang="en" style="display:none">Strategy &amp; large-scale operations optimization</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULOS -->
+    <section id="curriculos" class="section">
+      <div class="wrap">
+        <div class="section-head fade-up delay-2">
+          <h2>
+            <span data-lang="pt">Currículos</span>
+            <span data-lang="en" style="display:none">Résumés</span>
+          </h2>
+          <p>
+            <span data-lang="pt">Escolha o idioma, visualize direto na página e abra o PDF completo em nova aba.</span>
+            <span data-lang="en" style="display:none">Choose the language, preview directly on the page, and open the full PDF in a new tab.</span>
+          </p>
+        </div>
+
+        <div class="main-grid">
+          <!-- Sidebar -->
+          <aside class="sidebar-panel fade-up delay-2">
+            <div class="panel-header">
+              <h3>
+                <span data-lang="pt">Downloads rápidos</span>
+                <span data-lang="en" style="display:none">Quick downloads</span>
+              </h3>
+              <p>
+                <span data-lang="pt">Clique para abrir o arquivo. Para salvar, use o botão do navegador ou clique com o botão direito.</span>
+                <span data-lang="en" style="display:none">Click to open the file. To save, use the browser button or right-click the link.</span>
+              </p>
+            </div>
+
+            <div class="download-list">
+              <a class="download-card" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener" data-doc="pt">
+                <div class="download-left">
+                  <div class="download-icon">📄</div>
+                  <div class="download-label">
+                    <strong>
+                      <span data-lang="pt">Currículo · Português</span>
+                      <span data-lang="en" style="display:none">Résumé · Portuguese</span>
+                    </strong>
+                    <span>Marcos_Annibale_CV_PT.pdf</span>
+                  </div>
+                </div>
+                <span class="badge">
+                  <span data-lang="pt">Abrir</span>
+                  <span data-lang="en" style="display:none">Open</span>
+                </span>
+              </a>
+
+              <a class="download-card" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener" data-doc="en">
+                <div class="download-left">
+                  <div class="download-icon">🌍</div>
+                  <div class="download-label">
+                    <strong>Resume · English</strong>
+                    <span>Marcos_Annibale_CV_EN.pdf</span>
+                  </div>
+                </div>
+                <span class="badge">Open</span>
+              </a>
+            </div>
+
+            <div class="mini-note">
+              <span data-lang="pt"><strong>Dica:</strong> em alguns navegadores o PDF abre no visualizador interno. Para forçar o download, use <strong>Salvar link como…</strong> no menu de contexto.</span>
+              <span data-lang="en" style="display:none"><strong>Tip:</strong> some browsers open the PDF in the built-in viewer. To force a download, use <strong>Save link as…</strong> from the context menu.</span>
+            </div>
+
+            <div class="quick-links">
+              <a class="quick-link" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                <span>
+                  <span data-lang="pt">Ver PT-BR em tela cheia</span>
+                  <span data-lang="en" style="display:none">View PT-BR fullscreen</span>
+                </span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+              <a class="quick-link" href="/Marcos_Annibale_CV_EN.pdf" target="_blank" rel="noopener">
+                <span>
+                  <span data-lang="pt">Ver EN em tela cheia</span>
+                  <span data-lang="en" style="display:none">View EN fullscreen</span>
+                </span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+              <a class="quick-link" href="mailto:seuemail@exemplo.com">
+                <span>
+                  <span data-lang="pt">Entrar em contato</span>
+                  <span data-lang="en" style="display:none">Get in touch</span>
+                </span>
+                <span class="quick-link-arrow">→</span>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Preview -->
+          <section class="preview-panel fade-up delay-3">
+            <div class="preview-top">
+              <div class="preview-top-left">
+                <strong>
+                  <span data-lang="pt">Pré-visualização</span>
+                  <span data-lang="en" style="display:none">Preview</span>
+                </strong>
+                <span id="pvLabel">
+                  <!-- updated by JS -->
+                </span>
+              </div>
+
+              <div class="preview-actions">
+                <button class="tiny-btn active" id="btnPT" type="button">PT-BR</button>
+                <button class="tiny-btn" id="btnEN" type="button">EN</button>
+                <a class="tiny-btn" id="btnOpen" href="/Marcos_Annibale_CV_PT.pdf" target="_blank" rel="noopener">
+                  ↗ <span data-lang="pt">Abrir PDF</span><span data-lang="en" style="display:none">Open PDF</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="preview-body">
+              <div class="preview-shell">
+                <iframe
+                  class="preview-frame"
+                  id="pvFrame"
+                  src="/Marcos_Annibale_CV_PT.pdf"
+                  title="Pré-visualização do currículo"
+                >
+                  <span data-lang="pt">Seu navegador não suporta pré-visualização de PDF.</span>
+                  <span data-lang="en" style="display:none">Your browser does not support PDF preview.</span>
+                </iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-box fade-up delay-4">
+        <span>© <span id="year"></span> Marcos Annibale</span>
+        <span class="mono">
+          <span data-lang="pt">Atualizado em </span>
+          <span data-lang="en" style="display:none">Updated on </span>
+          <span id="updated"></span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── DOCS CONFIG ──
+    const DOCS = {
+      pt: { url: "/Marcos_Annibale_CV_PT.pdf", labelPT: "CV em PT-BR", labelEN: "CV in PT-BR" },
+      en: { url: "/Marcos_Annibale_CV_EN.pdf", labelPT: "Resume em EN", labelEN: "Resume in EN" }
+    };
+
+    let currentLang = "pt";
+    let currentDoc = "pt";
+
+    // ── ELEMENTS ──
+    const frame    = document.getElementById("pvFrame");
+    const pvLabel  = document.getElementById("pvLabel");
+    const openBtn  = document.getElementById("btnOpen");
+    const btnPT    = document.getElementById("btnPT");
+    const btnEN    = document.getElementById("btnEN");
+    const btnLangPT = document.getElementById("btnLangPT");
+    const btnLangEN = document.getElementById("btnLangEN");
+
+    // ── SET ACTIVE DOC ──
+    function setActiveDoc(docKey) {
+      currentDoc = docKey;
+      const doc = DOCS[docKey];
+      frame.src = doc.url;
+      openBtn.href = doc.url;
+      pvLabel.textContent = currentLang === "pt" ? ("Mostrando agora: " + doc.labelPT) : ("Showing now: " + doc.labelEN);
+      btnPT.classList.toggle("active", docKey === "pt");
+      btnEN.classList.toggle("active", docKey === "en");
+    }
+
+    // ── SET LANGUAGE ──
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+
+      // Toggle all [data-lang] elements
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = el.getAttribute("data-lang") === lang ? "" : "none";
+      });
+
+      // Update lang buttons
+      btnLangPT.classList.toggle("active", lang === "pt");
+      btnLangEN.classList.toggle("active", lang === "en");
+      btnLangPT.setAttribute("aria-pressed", lang === "pt");
+      btnLangEN.setAttribute("aria-pressed", lang === "en");
+
+      // Refresh preview label
+      const doc = DOCS[currentDoc];
+      pvLabel.textContent = lang === "pt"
+        ? ("Mostrando agora: " + doc.labelPT)
+        : ("Showing now: " + doc.labelEN);
+
+      // Update footer date format
+      const d = new Date();
+      document.getElementById("updated").textContent = lang === "pt"
+        ? d.toLocaleDateString("pt-BR")
+        : d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    }
+
+    // ── EVENTS ──
+    btnPT.addEventListener("click", () => setActiveDoc("pt"));
+    btnEN.addEventListener("click", () => setActiveDoc("en"));
+    btnLangPT.addEventListener("click", () => setLang("pt"));
+    btnLangEN.addEventListener("click", () => setLang("en"));
+
+    document.querySelectorAll("[data-doc]").forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        const doc = link.getAttribute("data-doc");
+        if (doc === "pt" || doc === "en") setActiveDoc(doc);
+      });
+    });
+
+    // ── INIT ──
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setLang("pt");
+    setActiveDoc("pt");
+  </script>
+</body>
+</html>
